@@ -21,3 +21,48 @@ function changeImg(){
 
 window.onload = changeImg;
 
+let tableFromJson = () => {
+const myBooks = [
+    {'Skill ID': '1', 'Skill': 'Aprendo Rapido',
+       'Categoria': 'Estudios', 'Valor': 'Excelente'
+    },
+    {'Skill ID': '2', 'Skill': 'Organizado',
+       'Categoria': 'Vida', 'Valor': 'Bueno'
+    },
+    {'Skill ID': '3', 'Skill': 'Templado',
+       'Categoria': 'Vida', 'Valor': 'Bueno'
+    }
+]
+    
+let col = [];
+for (let i = 0; i < myBooks.length; i++) {
+    for (let key in myBooks[i]) {
+    if (col.indexOf(key) === -1) {
+        col.push(key);
+    }
+    }
+}
+const table1 = document.createElement("table");
+    
+let tr = table1.insertRow(-1);
+    
+for (let i = 0; i < col.length; i++) {
+    let th = document.createElement("th");
+    th.innerHTML = col[i];
+    tr.appendChild(th);
+}
+    
+for (let i = 0; i < myBooks.length; i++) {
+    
+    tr = table1.insertRow(-1);
+    
+    for (let j = 0; j < col.length; j++) {
+    let tabCell = tr.insertCell(-1);
+    tabCell.innerHTML = myBooks[i][col[j]];
+    }
+}
+    
+const divShowData = document.getElementById('showData');
+divShowData.innerHTML = "";
+divShowData.appendChild(table1);
+  }
