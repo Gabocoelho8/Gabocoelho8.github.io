@@ -125,3 +125,66 @@
             <p id="showData"></p>
         </div>
     </section>
+
+    <div class="container">
+            <h1 id="Contact">Contact</h1>
+            <div class="contact-box">
+                <div class="contact-left">
+                    <h3>Send Message</h3>
+                    <form>
+                        <div class="input-row">
+                            <div class="input-group">
+                                <label for="nombre">Name</label>
+                                <input type="Text" placeholder=" Juan Rodriguez" id="nombre">
+                            </div>
+                        
+                        </div>
+                        <div class="input-row">
+                            <div class="input-group">
+                                <label for="email">Email</label>
+                                <input type="email" placeholder=" Example@gmail.com" id="email">
+                            </div>
+                            <div class="input-group">
+                                <label for="mensaje">Message</label>
+                                <textarea rows="6" placeholder=" Message" id="mensaje"></textarea>
+                            </div>
+                        </div>
+                        <input class="validar" type="submit" onclick ="enviarFormulario()" value ="Validar">
+                    <button id="myBtn">Send</button>
+                    </form>
+
+                    <div id="error"></div>
+                    <div id="myModal" class="modal">
+
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <p>Su solicitud se ha procesado</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="contact-right">
+                    <h3>Contact Me</h3>
+
+                    <table>
+                        <tr>
+                            <td>Email</td>
+                            <td>gabriel.coelho@correo.unimet.edu.ve</td>
+                        </tr>
+                        <tr>
+                            <td>Instagram</td>
+                            <td><a href="https://instagram.com/gabocoelho8" target="_blank">Link</a> @gabocoelho8</td>
+                        </tr>
+                        <tr>
+                            <td>Whatsapp</td>
+                            <td><a href="https://whatsapp.com" target="_blank">Link</a> +58 412-000-000</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    <script src="main.js"></script>
+    </body>
+
+</html>

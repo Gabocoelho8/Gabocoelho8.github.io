@@ -66,3 +66,44 @@ const divShowData = document.getElementById('showData');
 divShowData.innerHTML = "";
 divShowData.appendChild(table1);
   }
+
+var modal = document.getElementById("myModal");
+
+var btn = document.getElementById("myBtn");
+  
+var span = document.getElementsByClassName("close")[0];
+  
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+span.onclick = function() {
+    modal.style.display = "none";
+}
+window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+} 
+var nombre = document.getElementById("nombre");
+var email = document.getElementById("email");
+var mensaje = document.getElementById("mensaje");
+var error = document.getElementById("error");
+  
+function enviarFormulario(){
+  
+    var mensajesError = [];
+  
+    if(nombre.value === null || nombre.value === "" || typeof nombre !== "string"){
+          mensajesError.push("* Ingresa Nombre Valido");
+    }
+    if(email.value === null || email.value === ""){
+          mensajesError.push("* Ingresa tu email");
+    }
+    if(mensaje.value === null || mensaje.value === ""){
+          mensajesError.push("* Ingresa tu mensaje");
+    }
+  
+    error.innerHTML = mensajesError.join(", ");
+  
+    return false;
+  }
